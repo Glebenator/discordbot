@@ -3,7 +3,7 @@ const client = new Discord.Client();
 //client.on('message', message => {});
 
 
-const TOKEN = ('NTA0ODk5ODY1NDQ5NDYzODA4.W9FepA.QAyooLaTcgecg1M6LOnb4pJdH6w');
+const TOKEN = ('...insert yours....');
 
 //const channel = <client>.channels.cache.get('<id>');
 const channel = client.channels.cache.get('<id>');
