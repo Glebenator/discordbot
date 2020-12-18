@@ -26,4 +26,4 @@ client.on('ready', async () =>{
     }))
 })
 
-client.login(config.TOKEN)
+client.login(config.token)
