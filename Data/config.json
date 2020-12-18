@@ -1,0 +1,5 @@
+{
+    "TOKEN": "NTA0ODk5ODY1NDQ5NDYzODA4.W9FepA.m99L_-JtEhoKtMfbhIHUnKGtbGg",
+    "prefix": "!",
+    "mongoPath": "mongodb://localhost:27017/discordbot"
+}
