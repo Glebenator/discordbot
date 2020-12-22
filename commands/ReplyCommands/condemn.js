@@ -6,7 +6,6 @@ module.exports = {
     execute: (async(message) => {
         
         const guildId = message.guild.id
-        const username = message.author.username
         const userId = message.author.id
         message.channel.send("ОСУЖДАЮ")
         await mongo().then(async mongoose => {

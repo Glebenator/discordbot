@@ -1,4 +1,5 @@
-const { mongo } = require("mongoose")
+
+const mongo  = require("../mongo")
 const warnSchema = require("../schemas/warn-schema")
 
 module.exports = {
@@ -14,25 +15,20 @@ module.exports = {
   
       const guildId = message.guild.id
       const userId = target.id
-  
       await mongo().then(async (mongoose) => {
         try {
-          const results = await warnSchema.findOne({
-            guildId,
-            userId,
-          })
-  
-          let reply = `Previous warnings for <@${userId}>:\n\n`
-  
-          for (const warning of results.warnings) {
-            const { author, timestamp, reason } = warning
-  
-            reply += `By ${author} on ${new Date(
-              timestamp
-            ).toLocaleDateString()} for "${reason}"\n\n`
+          const results = await warnSchema.findOne(
+            {
+              guildId,
+              userId,
+            }
+          )
+          if (results){
+          message.reply("has " + results.warnings + " Осуждений")
           }
-  
-          message.reply(reply)
+          else{
+            message.channel.send("Could not find this guy")
+          }
         } finally {
           mongoose.connection.close()
         }

@@ -1,8 +1,3 @@
-
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min) ) + min;
-  };
-
 module.exports = {
     commands: 'razer',
     description: 'see why razer is inferior',
