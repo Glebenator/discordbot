@@ -11,4 +11,4 @@ const dailySchema = mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('daily', dailySchema)
+module.exports = mongoose.model('message-daily', dailySchema)
