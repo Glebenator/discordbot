@@ -51,12 +51,14 @@ module.exports = {
           const now = new Date().getTime()
 
           const diffTime = Math.abs(now - then)
+          const diffHrs = Math.round(diffTime / (1000 * 60 * 60))
           const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24))
 
           if (diffDays <= 1) {
             claimedCache.push(id)
 
-            message.reply(alreadyClaimed)
+            message.reply(alreadyClaimed + " " + diffHrs+ " remaining")
+
             return
           }
         }
@@ -69,7 +71,7 @@ module.exports = {
 
         // TODO: Give the rewards
         success.callback(message,arguments,text);
-        moistening.callback(message,arguments,text);
+        moist.callback(message,arguments,text);
 
 
 
